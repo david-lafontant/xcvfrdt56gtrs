@@ -3,11 +3,12 @@ class User < ApplicationRecord
   # :registerable,:confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :confirmable, :lockable, :timeoutable, 
          :recoverable, :rememberable, :validatable, :trackable
-  enum role: [:user, :admin]
 
+  enum :role, %i[user admin sysadmin].freeze, default: :user, validate: true
+  enum :institution, %i[conatel agd].freeze, default: :conatel, validate: true
   after_initialize :set_default_role, if: :new_record?
   after_initialize :set_banned, if: :new_record?
-  
+  after_initialize :set_default_institution, if: :new_record?
   private
 
   def set_default_role
@@ -16,5 +17,9 @@ class User < ApplicationRecord
 
   def set_banned
     self.banned ||= false
+  end
+
+  def set_default_institution
+    self.institution ||= :conatel
   end
 end
