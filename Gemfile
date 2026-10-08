@@ -60,7 +60,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem 'bullet', '>= 8.2'
+  gem 'bullet', '>= 8.2', require: true
 end
 
 gem 'active_storage_validations', '>= 4.1.1'
