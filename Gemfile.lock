@@ -154,6 +154,11 @@ GEM
     elasticsearch-api (9.5.0)
       base64
       multi_json
+    enum_help (0.0.20)
+      activesupport (>= 3.0.0)
+    enum_select_rails (0.3.0)
+      enum_help
+      rails
     erb (6.0.7)
     erubi (1.13.1)
     et-orbi (1.4.2)
@@ -515,6 +520,7 @@ DEPENDENCIES
   devise_invitable (>= 2.0.14)
   devise_zxcvbn (>= 6.0)
   elasticsearch (>= 9.5)
+  enum_select_rails (>= 0.3.0)
   factory_bot_rails (>= 6.5.1)
   faker (>= 3.8)
   friendly_id (>= 5.7)
