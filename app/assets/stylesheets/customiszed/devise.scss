@@ -1,0 +1,38 @@
+@import './palette.scss';
+
+.form-devise {
+  max-width: 330px;
+  padding: 1rem;
+  min-height: 90vh;
+  background: $dusty-denim;
+  margin-bottom: 10vh;
+  border-radius: 10px;
+
+  h1, h2, a{
+    color: $alabaster-grey
+  }
+
+}
+
+.form-devise .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-devise input {
+  margin-bottom: 1rem;
+}
+
+.form-devise input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-devise input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+
