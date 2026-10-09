@@ -1,5 +1,7 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+@import './customiszed//palette.scss';
+@import './customiszed/devise.scss';
 @import './customiszed//navbar.scss';
 
 html,
@@ -9,4 +11,5 @@ body {
 
 body {
   padding-top: 56px;
+  background: $gradient-top-left;
 }
