@@ -26,7 +26,7 @@ class User < ApplicationRecord
   end
 
   def clean_field
-    [:last_name, :first_name].each do |elem|
+    [ :last_name, :first_name ].each do |elem|
       if self[elem].present?
         self[elem] = self[elem].strip.downcase
       end

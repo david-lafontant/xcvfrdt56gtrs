@@ -52,30 +52,30 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  gem 'rspec-rails', '>= 8.0.4'
-  gem 'factory_bot_rails', '>= 6.5.1'
-  gem 'faker', '>= 3.8'
+  gem "rspec-rails", ">= 8.0.4"
+  gem "factory_bot_rails", ">= 6.5.1"
+  gem "faker", ">= 3.8"
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem 'bullet', '>= 8.2', require: true
+  gem "bullet", ">= 8.2", require: true
 end
 
-gem 'json', '~> 2.21'
-gem 'active_storage_validations', '>= 4.1.1'
-gem 'aws-sdk-core', '>= 3.257'
-gem 'cancancan', '>= 3.6.1'
-gem 'devise', '>= 5.0.4'
-gem 'devise_invitable', '>= 2.0.14'
-gem 'devise-security', '>= 0.18.0'
-gem 'devise-two-factor', '>= 6.4.1'
-gem 'devise_zxcvbn', '>= 6.0'
-gem 'elasticsearch', '>= 9.5'
-gem 'enum_select_rails', '>= 0.3.0'
-gem 'friendly_id', '>= 5.7'
-gem 'kaminari', '>= 1.2.2'
-gem 'letter_opener', '>= 1.10'
-gem 'securerandom', '>= 0.4.1'
-gem 'sidekiq', '>= 8.1.7'
+gem "json", "~> 2.21"
+gem "active_storage_validations", ">= 4.1.1"
+gem "aws-sdk-core", ">= 3.257"
+gem "cancancan", ">= 3.6.1"
+gem "devise", ">= 5.0.4"
+gem "devise_invitable", ">= 2.0.14"
+gem "devise-security", ">= 0.18.0"
+gem "devise-two-factor", ">= 6.4.1"
+gem "devise_zxcvbn", ">= 6.0"
+gem "elasticsearch", ">= 9.5"
+gem "enum_select_rails", ">= 0.3.0"
+gem "friendly_id", ">= 5.7"
+gem "kaminari", ">= 1.2.2"
+gem "letter_opener", ">= 1.10"
+gem "securerandom", ">= 0.4.1"
+gem "sidekiq", ">= 8.1.7"
