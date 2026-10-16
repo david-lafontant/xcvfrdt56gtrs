@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :registerable,:confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  has_many :certificates, class_name: 'Certificate', foreign_key: 'operator_id'
+  has_many :certificates, class_name: 'Certificate', foreign_key: 'operator'
 
   devise :invitable, :database_authenticatable, :confirmable, :lockable, :timeoutable,
          :recoverable, :rememberable, :validatable, :trackable
