@@ -22,6 +22,7 @@ class CertificatesController < ApplicationController
   # POST /certificates or /certificates.json
   def create
     @certificate = Certificate.new(certificate_params)
+    @certificate.operator_id = current_user.id
 
     respond_to do |format|
       if @certificate.save
@@ -65,6 +66,6 @@ class CertificatesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def certificate_params
-      params.expect(certificate: [ :first_name, :last_name, :company, :certificate_id, :operator_id, :description, documents: [] ])
+      params.expect(certificate: [ :first_name, :last_name, :company, :certificate_id, :description, documents: [] ])
     end
 end
