@@ -11,42 +11,37 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
+  <div class="form-floating">
+    <%= form.text_field :first_name, class: "form-control" %>
+    <%= form.label :first_name  %>
+  </div>
+
+  <div class="form-floating">
+    <%= form.text_field :last_name, class: "form-control" %>
+    <%= form.label :last_name %>
+  </div>
+
+  <div class="form-floating">
+    <%= form.label :company %>
+    <%= form.text_field :company, class: "form-control" %>
+  </div>
+
+  <div class="form-floating">
+    <%= form.label :certificate_id %>
+    <%= form.text_field :certificate_id, class: "form-control" %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.label :description, "Description des materiels" %>
+    <%= form.textarea :description, class: "form-control" %>
+  </div>
+
+  <div class="form-floating">
+    <%= form.label :documents , class: "opacity-0"%>
+    <%= form.file_field :documents, multiple: true, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div>
-    <%= form.label :company, style: "display: block" %>
-    <%= form.text_field :company %>
-  </div>
-
-  <div>
-    <%= form.label :certificate_id, style: "display: block" %>
-    <%= form.text_field :certificate_id %>
-  </div>
-
-  <div>
-    <%= form.label :documents, style: "display: block" %>
-    <%= form.file_field :documents, multiple: true %>
-  </div>
-
-  <div>
-    <%= form.label :operator_id, style: "display: block" %>
-    <%= form.text_field :operator_id %>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.textarea :description %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit "Creer certificat", class: "btn btn-success w-100" %>
   </div>
 <% end %>
