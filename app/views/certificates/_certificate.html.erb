@@ -1,0 +1,39 @@
+<div id="<%= dom_id certificate %>">
+  <p>
+    <strong>First name:</strong>
+    <%= certificate.first_name %>
+  </p>
+
+  <p>
+    <strong>Last name:</strong>
+    <%= certificate.last_name %>
+  </p>
+
+  <p>
+    <strong>Company:</strong>
+    <%= certificate.company %>
+  </p>
+
+  <p>
+    <strong>Certificate:</strong>
+    <%= certificate.certificate_id %>
+  </p>
+
+  <p>
+    <strong>Documents:</strong>
+    <% certificate.documents.each do |document| %>
+      <div><%= link_to document.filename, document %></div>
+    <% end %>
+  </p>
+
+  <p>
+    <strong>Operator:</strong>
+    <%= certificate.operator_id %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= certificate.description %>
+  </p>
+
+</div>

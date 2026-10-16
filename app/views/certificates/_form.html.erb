@@ -1,0 +1,52 @@
+<%= form_with(model: certificate) do |form| %>
+  <% if certificate.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(certificate.errors.count, "error") %> prohibited this certificate from being saved:</h2>
+
+      <ul>
+        <% certificate.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :company, style: "display: block" %>
+    <%= form.text_field :company %>
+  </div>
+
+  <div>
+    <%= form.label :certificate_id, style: "display: block" %>
+    <%= form.text_field :certificate_id %>
+  </div>
+
+  <div>
+    <%= form.label :documents, style: "display: block" %>
+    <%= form.file_field :documents, multiple: true %>
+  </div>
+
+  <div>
+    <%= form.label :operator_id, style: "display: block" %>
+    <%= form.text_field :operator_id %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.textarea :description %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
