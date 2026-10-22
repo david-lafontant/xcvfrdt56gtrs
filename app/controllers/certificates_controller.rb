@@ -6,7 +6,7 @@ class CertificatesController < ApplicationController
   def index
     @certificates = nil
    if ['admin', 'sysadmin'].include?(current_user.role)
-    @certificates = Certificate.all
+    @certificates = Certificate.where(canceled: false)
    else 
       respond_to do |format|
         format.json { render nothing: true, status: :not_found }
@@ -47,7 +47,10 @@ class CertificatesController < ApplicationController
   end
 
   # PATCH/PUT /certificates/1 or /certificates/1.json
-  def update   
+  def update 
+    
+    @certificate.canceled = true
+    @certificate.save
     @certificate = Certificate.new(certificate_params)
     @certificate.operator_id = current_user.id
 
