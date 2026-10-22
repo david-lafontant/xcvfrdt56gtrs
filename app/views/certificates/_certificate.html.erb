@@ -1,40 +1,40 @@
-<div id="<%= dom_id certificate %>" class="card">
-  <div class="card-body">
-    <p class="card-text">
-      <strong>First name:</strong>
-      <%= certificate.first_name %>
-    </p>
+<div id="<%= dom_id certificate %>" class="card-body">
+  
+  <p class="card-text">
+    <strong>First name:</strong>
+    <%= certificate.first_name %>
+  </p>
 
-    <p class="card-text">
-      <strong>Last name:</strong>
-      <%= certificate.last_name %>
-    </p>
+  <p class="card-text">
+    <strong>Last name:</strong>
+    <%= certificate.last_name %>
+  </p>
 
-    <p class="card-text">
-      <strong>Company:</strong>
-      <%= certificate.company %>
-    </p>
+  <p class="card-text">
+    <strong>Company:</strong>
+    <%= certificate.company %>
+  </p>
 
-    <p class="card-text">
-      <strong>Certificate:</strong>
-      <%= certificate.certificate_id %>
-    </p>
+  <p class="card-text">
+    <strong>Certificate:</strong>
+    <%= certificate.certificate_id %>
+  </p>
 
-    <p class="card-text">
-      <strong>Documents:</strong>
-      <% certificate.documents.each do |document| %>
-        <div><%= link_to document.filename, document %></div>
-      <% end %>
-    </p>
+  <p class="card-text">
+    <strong>Documents:</strong>
+    <% certificate.documents.each do |document| %>
+      <div><%= link_to document.filename, document %></div>
+    <% end %>
+  </p>
 
-    <p class="card-text">
-      <strong>Operator:</strong>
-      <%= certificate.operator_id %>
-    </p>
+  <p class="card-text">
+    <strong>Operator:</strong>
+    <%= certificate.user_name() %>
+  </p>
 
-    <p class="card-text">
-      <strong>Description:</strong>
-      <%= certificate.description %>
-    </p>
-  </div>
+  <p class="card-text">
+    <strong>Description:</strong>
+    <%= certificate.description %>
+  </p>
 </div>
+

@@ -1,12 +1,14 @@
-<% content_for :title, "New certificate" %>
-<main class="form-devise w-100 m-auto">
-<h1>New certificate</h1>
+<% if ['admin', 'sysadmin'].include?(current_user.role)  %>
+  <% content_for :title, "New certificate" %>
+  <main class="form-devise w-100 m-auto">
+  <h1>New certificate</h1>
 
-<%= render "form", certificate: @certificate %>
+  <%= render "form", certificate: @certificate %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Back to certificates", certificates_path %>
-</div>
-</main>
+  <div>
+    <%= link_to "Back to certificates", certificates_path %>
+  </div>
+  </main>
+<%end%>
