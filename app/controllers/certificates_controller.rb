@@ -47,16 +47,20 @@ class CertificatesController < ApplicationController
   end
 
   # PATCH/PUT /certificates/1 or /certificates/1.json
-  def update
+  def update   
+    @certificate = Certificate.new(certificate_params)
+    @certificate.operator_id = current_user.id
+
     respond_to do |format|
-      if @certificate.update(certificate_params)
-        format.html { redirect_to @certificate, notice: "Certificate was successfully updated.", status: :see_other }
-        format.json { render :show, status: :ok, location: @certificate }
+      if @certificate.save
+        format.html { redirect_to @certificate, notice: "Certificate was successfully issued." }
+        format.json { render :show, status: :created, location: @certificate }
       else
-        format.html { render :edit, status: :unprocessable_content }
+        format.html { render :new, status: :unprocessable_content }
         format.json { render json: @certificate.errors, status: :unprocessable_content }
       end
     end
+
   end
 
   # DELETE /certificates/1 or /certificates/1.json
