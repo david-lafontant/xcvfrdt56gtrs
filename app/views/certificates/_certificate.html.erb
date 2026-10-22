@@ -20,12 +20,14 @@
     <%= certificate.certificate_id %>
   </p>
 
-  <p class="card-text">
-    <strong>Documents:</strong>
-    <% certificate.documents.each do |document| %>
-      <div><%= link_to document.filename, document %></div>
-    <% end %>
-  </p>
+  <% if certificate.documents.attached? %>
+    <p class="card-text">
+      <strong>Documents:</strong>
+      <% certificate.documents.each do |document| %>
+        <div><%= link_to document.filename, document %></div>
+      <% end %>
+    </p>
+  <%end%>
 
   <p class="card-text">
     <strong>Operator:</strong>
