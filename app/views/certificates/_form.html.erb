@@ -32,6 +32,9 @@
   </div>
 
   <div class="form-floating">
+    <% @certificate.documents.each do |document|   %>
+     <%= form.hidden_field :documents, multiple: true, value: document.signed_id %>
+    <%end%>
     <%= form.label :documents , class: "opacity-0"%>
     <%= form.file_field :documents, multiple: true, class: "form-control" %>
   </div>
