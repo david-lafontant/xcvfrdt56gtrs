@@ -1,9 +1,20 @@
 class CertificatesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_certificate, only: %i[ show edit update destroy ]
 
   # GET /certificates or /certificates.json
   def index
+    @certificates = nil
+   if ['admin', 'sysadmin'].include?(current_user.role)
     @certificates = Certificate.all
+   else 
+      respond_to do |format|
+        format.json { render nothing: true, status: :not_found }
+        format.html { redirect_to main_app.root_url, alert: "access denied" }
+        format.js { render nothing: true, status: :not_found }
+      end
+   end
+   return @certificates
   end
 
   # GET /certificates/1 or /certificates/1.json
@@ -66,6 +77,6 @@ class CertificatesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def certificate_params
-      params.expect(certificate: [ :first_name, :last_name, :company, :certificate_id, :description, documents: [] ])
+      params.expect(certificate: [ :first_name, :last_name, :company, :description, documents: [] ])
     end
 end
