@@ -63,7 +63,7 @@ group :development do
   gem "bullet", ">= 8.2", require: true
 end
 
-gem "json", "~> 2.21"
+gem "json", "~> 3.1"
 gem "active_storage_validations", ">= 4.1.1"
 gem "aws-sdk-core", ">= 3.257"
 gem "cancancan", ">= 3.6.1"
