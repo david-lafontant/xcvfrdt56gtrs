@@ -73,7 +73,6 @@ gem "devise-security", ">= 0.18.0"
 gem "devise-two-factor", ">= 6.4.1"
 gem "devise_zxcvbn", ">= 6.0"
 gem "elasticsearch", ">= 9.5"
-# gem 'elasticsearch-model', '>= 8.0.1'
 gem 'elasticsearch-rails', '>= 8.0.1'
 gem "enum_select_rails", ">= 0.3.0"
 gem "friendly_id", ">= 5.7"
